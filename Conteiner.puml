@@ -1,0 +1,24 @@
+@startuml C4_Elements
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define C4Container
+
+!include <C4/C4_Container>
+
+Person(person, "Usuário", "Usuário do sistema")
+
+System_Boundary(system, "Sistema de secretaria de transportes") {
+    Container(web_app, "Aplicativo Web", "Vuejs", "Interface para o usuário")
+    Container(api, "API", "Laravel", "Backend do sistema")
+    ContainerDb(database, "Banco de Dados", "PostgreSQL", "Armazena informações de produtos e usuários")
+}
+
+System_Ext(external_system, "Sistema de login/prefeitura", "Sistema de login")
+
+Rel(person, external_system, "Interage com", "HTTPS")
+Rel(web_app, api, "Solicita dados", "REST/JSON")
+Rel(api, database, "Lê e grava", "SQL")
+Rel(external_system, web_app, "Envia token de login", "HTTP")
+
+@enduml
