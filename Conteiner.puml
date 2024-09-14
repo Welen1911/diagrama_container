@@ -19,6 +19,7 @@ System_Boundary(system, "Sistema de secretaria de transportes") {
 System_Ext(external_system, "Sistema de login/prefeitura", "Sistema de login")
 
 Rel(person, external_system, "Interage com", "HTTPS")
+Rel(person, web_app, "Interage com", "HTTP")
 Rel(web_app, api, "Solicita dados", "REST/JSON")
 Rel(api, api_2, "Redireciona a solicitação", "REST/JSON")
 Rel(api, api_3, "Redireciona a solicitação", "REST/JSON")
