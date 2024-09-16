@@ -9,3 +9,5 @@ Já nos servidores temos o Apache rodando o projeto feito em Laravel, onde se co
 O banco de dados em PostgreSQL fica responsável por todo o armazenamento.
 
 Todo o projeto, com excessão do frontend, foi hospedado no Azure onde foram usadas as funcionalidades da plataforma para criar e rodar os 4 servidores.
+
+![alt text](image.png)
